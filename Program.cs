@@ -26,8 +26,26 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// seed with some data
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetService<MyContext>();
+
+    context.Companies.Add(new Company { Id = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d"), Name = "IBM" });
+    context.Companies.Add(new Company { Id = new Guid("51e36eda-12ce-41f7-893e-4a475a2b7116"), Name = "HP" });
+
+    context.Customers.Add(new Customer { Id = new Guid("51e36eda-12ce-41f7-893e-4a475a2b7116"), Name = "John Doe", CompanyId = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d") });
+
+    context.SaveChanges();
+}
+
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    // Not strictly necessary, but good - browsers will cache but revalidate on ETag every time.
+    OnPrepareResponse = ctx => ctx.Context.Response.Headers.Append("Cache-Control", $"no-cache")
+});
 
 app.UseRouting();
 app.UseAuthentication();
