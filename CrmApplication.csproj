@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cloudy.CMS" Version="1.62.37" />
-    <PackageReference Include="Cloudy.CMS.UI" Version="1.62.37" />
+    <PackageReference Include="Cloudy.CMS" Version="1.62.51" />
+    <PackageReference Include="Cloudy.CMS.UI" Version="1.62.51" />
+    <PackageReference Include="Cloudy.CMS.UI.AzureMediaPicker" Version="1.62.51" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.10" />
   </ItemGroup>

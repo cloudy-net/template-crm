@@ -5,10 +5,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages().AddApplicationPart(typeof(CloudyUIAssemblyHandle).Assembly);
-builder.Services.AddMvc();
 builder.Services.AddCloudy(cloudy => cloudy
     .AddAdmin(admin => admin.Unprotect())   // NOTE: Admin UI will be publicly available!
+    .AddAzureMediaPicker()
     .AddContext<MyContext>()                // Adds EF Core context with your content types
 );
 
@@ -43,11 +42,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseHttpsRedirection();
 
-app.UseStaticFiles(new StaticFileOptions
-{
-    // Not strictly necessary, but good - browsers will cache but revalidate on ETag every time.
-    OnPrepareResponse = ctx => ctx.Context.Response.Headers.Append("Cache-Control", $"no-cache")
-});
+app.UseStaticFiles(new StaticFileOptions().MustValidate());
 
 app.UseRouting();
 app.UseAuthentication();
