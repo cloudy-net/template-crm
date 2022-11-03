@@ -1,6 +1,7 @@
 ﻿using Cloudy.CMS.ContentSupport;
 using Cloudy.CMS.UI.FormSupport.FieldTypes;
 using Cloudy.CMS.UI.List;
+using Cloudy.CMS.UI.List.Filter;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,6 +16,7 @@ namespace CrmApplication.Models
         public string TelephoneNumber { get; set; }
         [UIHint("textarea")]
         public string Notes { get; set; }
+        [ListFilter]
         [ListColumn]
         [Select(typeof(Company))]
         public Guid CompanyId { get; set; }

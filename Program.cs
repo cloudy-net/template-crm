@@ -34,7 +34,9 @@ using (var scope = app.Services.CreateScope())
     context.Companies.Add(new Company { Id = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d"), Name = "IBM" });
     context.Companies.Add(new Company { Id = new Guid("51e36eda-12ce-41f7-893e-4a475a2b7116"), Name = "HP" });
 
-    context.Customers.Add(new Customer { Id = new Guid("51e36eda-12ce-41f7-893e-4a475a2b7116"), Name = "John Doe", CompanyId = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d") });
+    context.Customers.Add(new Customer { Id = new Guid("8e4c70f8-a37a-4566-821c-aa30c9e05563"), Name = "John Doe", CompanyId = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d") });
+    context.Customers.Add(new Customer { Id = new Guid("bfdacf55-19a0-4f5b-b9c8-4e48cb4f42f5"), Name = "Jane Doe", CompanyId = new Guid("042f0213-6e95-4b23-b924-e43bb51c219d") });
+    context.Customers.Add(new Customer { Id = new Guid("c7c1a10d-51b6-4e25-8305-fe4a8b67a568"), Name = "James Boe", CompanyId = new Guid("51e36eda-12ce-41f7-893e-4a475a2b7116") });
 
     context.SaveChanges();
 }
