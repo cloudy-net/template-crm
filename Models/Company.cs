@@ -1,5 +1,5 @@
-﻿using Cloudy.CMS.ContentSupport;
-using Cloudy.CMS.UI.FieldTypes.MediaPicker;
+﻿using Cloudy.CMS.EntitySupport;
+using Cloudy.CMS.UI.FieldSupport.MediaPicker;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 

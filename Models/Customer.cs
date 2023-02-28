@@ -1,5 +1,5 @@
-﻿using Cloudy.CMS.ContentSupport;
-using Cloudy.CMS.UI.FormSupport.FieldTypes;
+﻿using Cloudy.CMS.EntitySupport;
+using Cloudy.CMS.UI.FieldSupport.Select;
 using Cloudy.CMS.UI.List;
 using Cloudy.CMS.UI.List.Filter;
 using System.ComponentModel.DataAnnotations;
@@ -18,7 +18,7 @@ namespace CrmApplication.Models
         public string Notes { get; set; }
         [ListFilter]
         [ListColumn]
-        [Select(typeof(Company))]
+        [Select<Company>]
         public Guid CompanyId { get; set; }
     }
 }
