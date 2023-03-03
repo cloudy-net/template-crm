@@ -10,7 +10,7 @@ namespace CrmApplication.Models
     public class Person : INameable
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         [ListColumn]
         public string Name { get; set; }
         public string TelephoneNumber { get; set; }
@@ -19,6 +19,6 @@ namespace CrmApplication.Models
         [ListFilter]
         [ListColumn]
         [Select<Company>]
-        public Guid CompanyId { get; set; }
+        public int CompanyId { get; set; }
     }
 }
