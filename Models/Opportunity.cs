@@ -9,8 +9,8 @@ namespace CrmApplication.Models
         public int Id { get; set; }
 
         [Select<Person>]
-        public int ContactPerson { get; set; }
+        public int? ContactPerson { get; set; }
         [Select<Company>]
-        public int Company { get; set; }
+        public int? Company { get; set; }
     }
 }

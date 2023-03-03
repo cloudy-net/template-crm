@@ -10,7 +10,7 @@ namespace CrmApplication.Models
         public int Id { get; set; }
 
         [Select<Opportunity>]
-        public int Opportunity { get; set; }
+        public int? Opportunity { get; set; }
 
         public string Name { get; set; }
         [UIHint("html")]

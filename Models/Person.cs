@@ -19,6 +19,6 @@ namespace CrmApplication.Models
         [ListFilter]
         [ListColumn]
         [Select<Company>]
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
     }
 }
